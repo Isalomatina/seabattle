@@ -16,6 +16,7 @@
     Enter your name:
     <input type="text" name="player-name">
     <input type="submit" name="register" value="Start!">
+    <%--jjjj--%>
 </form>
 
 </body>
