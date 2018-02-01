@@ -11,7 +11,7 @@
     <meta http-equiv="refresh" content="5">
     <title>Wait - Sea Battle</title>
 </head>
-<body>
+<body> ${playerGameContext.player.name}
 
 Please wait other player to join.
 
