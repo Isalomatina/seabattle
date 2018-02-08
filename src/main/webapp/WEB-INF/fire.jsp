@@ -23,6 +23,7 @@
 
         table {
             border-collapse: collapse;
+            display: inline-block;
         }
 
         td {
@@ -35,6 +36,12 @@
         td.SHIP {
             background-color: darkgrey;
         }
+        td.HIT {
+             background-color: red;
+         }
+        td.MISS {
+            background-color: aquamarine;
+        }
     </style>
 </head>
 <bodyclass="w3-display-container container">
@@ -42,7 +49,7 @@
 <div class="w3-card-4 w3-display-middle">
 
     <c:set var="myField" value="${playerGameContext.player.myField}"/>
-
+    <c:set var="enemyField" value="${playerGameContext.player.myField}"/>
 
     <form method="post" class="w3-padding">
         <table class="w3-margin">
@@ -57,23 +64,38 @@
                     <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
                         <c:set var="addr" value="${col}${row}"/>
                         <td class="${myField.getCell(addr)}">
-                            <input type="checkbox" name="addr"
-                                   value="${addr}" ${myField.hasShip(addr) ? "checked" : ""}>
                         </td>
                     </c:forEach>
                 </tr>
             </c:forEach>
         </table>
-        <input class="w3-button" type="submit" value="Start!">
+
+
+        <table class="w3-margin">
+            <tr>
+                <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
+                    <td>${col}</td>
+                </c:forEach>
+            </tr>
+            <c:forEach var="row" begin="1" end="10">
+                <tr>
+                    <td>${row}</td>
+                    <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
+                        <c:set var="addr" value="${col}${row}"/>
+                        <td class="${enemyField.getCell(addr)}">
+                            <input type="radio" name="addr" value="${addr}">
+                        </td>
+                    </c:forEach>
+                </tr>
+            </c:forEach>
+        </table>
+
+
+        <input class="w3-button" type="submit" value="Fire!">
     </form>
 </div>
 
-<c:if test="${myField.invalid}">
-    <div class="w3-display-top w3-panel w3-red">
-        <h3>Sorry!</h3>
-        <p>Your ships are not placed correctly. Please check and correct.</p>
-    </div>
-</c:if>
+
 
 </body>
 </html>

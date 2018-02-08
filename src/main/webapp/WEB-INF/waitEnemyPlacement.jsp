@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: JavaCourses1
+  Date: 08.02.2018.
+  Time: 18:30
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,8 +16,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,900" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     <title>Register - Sea Battle</title>
-    <style>
-    </style>
 </head>
 <body>
 <div class="w3-display-container container">
@@ -20,13 +25,14 @@
         </header>
         <div class="w3-container w3-center w3-text-blue w3-padding">
             <p>
-                <i class="fas fa-spinner fa-5x fa-spin"></i>
+                <i class="fas fa-location-arrow fa-5x fa-spin"></i>
             </p>
             <p>
-                <b>Your opponent will join soon!</b>
+                <b>Your opponent is placing his/her ships!</b>
             </p>
         </div>
     </div>
 </div>
+
 </body>
 </html>
